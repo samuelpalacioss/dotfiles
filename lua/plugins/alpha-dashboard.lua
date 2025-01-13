@@ -39,9 +39,9 @@ return {
 		--Activating this put snoopy in white idk (right now is yellow)
 
 		-- Adjust header padding
-		-- dashboard.section.header.opts = {
-		--   position = "center",
-		-- }
+		dashboard.section.header.opts = {
+			position = "center",
+		}
 
 		-- Configure buttons
 		dashboard.section.buttons.val = {
