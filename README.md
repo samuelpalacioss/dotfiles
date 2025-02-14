@@ -23,3 +23,17 @@ mv dist out
 ```
 go install github.com/go-delve/delve/cmd/dlv@latest
 ```
+## On Ubuntu
+### 1. Add mason to path (nano ~/.zshrc or nano ~/.bash.rc)
+```
+export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
+Save file
+source ~/.zshrc
+```
+### 2. Add go to path for delve (nano ~/.zshrc or nano ~/.bash.rc)
+```
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
+Save file
+source ~/.zshrc
+```
