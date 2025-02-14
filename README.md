@@ -18,3 +18,8 @@ npm install --legacy-peer-deps
 npx gulp vsDebugServerBundle
 mv dist out
 ```
+### 3: Install delve for debuggin in Go: 
+[nvim-dap - Go (Using Delve Directly)](https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#go-using-delve-directly)
+```
+go install github.com/go-delve/delve/cmd/dlv@latest
+```
