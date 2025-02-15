@@ -37,3 +37,9 @@ export PATH=$GOPATH/bin:$PATH
 Save file
 source ~/.zshrc
 ```
+
+### 3. Install these for telescope to work
+```
+sudo apt-get install ripgrep
+sudo apt install fd-find
+```
