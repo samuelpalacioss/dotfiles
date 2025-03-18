@@ -43,3 +43,8 @@ source ~/.zshrc
 sudo apt-get install ripgrep
 sudo apt install fd-find
 ```
+
+### 4. Install xclip to use clipboard on nvim
+```
+sudo apt install xclip
+```
