@@ -23,6 +23,8 @@ mv dist out
 ```
 go install github.com/go-delve/delve/cmd/dlv@latest
 ```
+### 4: Install prettier and LSPS with Mason
+
 ## On Ubuntu
 ### 1. Add mason to path (nano ~/.zshrc or nano ~/.bash.rc)
 ```
