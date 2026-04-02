@@ -4,7 +4,7 @@ vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim.
 vim.o.breakindent = true -- Enable break indent
 vim.o.ignorecase = true -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.smartcase = true -- smart case
-vim.o.wrap = false -- display lines as one long line
+vim.o.wrap = true -- wrap lines to the window width
 vim.o.linebreak = true -- companion to wrap don't split words
 vim.o.relativenumber = true -- set relative numbered lines
 vim.o.shiftwidth = 4 -- the number of spaces inserted for each indentation
@@ -19,3 +19,10 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "cs",
+  callback = function()
+    vim.opt_local.indentexpr = ""
+    vim.opt_local.smartindent = false
+  end,
+})

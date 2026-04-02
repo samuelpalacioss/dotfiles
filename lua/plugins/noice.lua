@@ -2,7 +2,17 @@ return {
   "folke/noice.nvim",
   event = "VeryLazy",
   opts = {
-    -- add any options here
+    views = {
+      split = {
+        size = "12%",
+      },
+      popup = {
+        size = {
+          width = 90,
+          height = 12,
+        },
+      },
+    },
   },
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
