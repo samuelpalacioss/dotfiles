@@ -2,7 +2,12 @@ return {
   {
     "williamboman/mason.nvim",
     lazy = false,
-    opts = {},
+    opts = {
+      registries = {
+        "github:mason-org/mason-registry",
+        "github:Crashdummyy/mason-registry",
+      },
+    },
   },
 
   {
@@ -62,21 +67,18 @@ return {
       vim.opt.signcolumn = "yes"
     end,
     config = function()
-      local lsp_config = require("lspconfig")
-      local lsp_defaults = require("lspconfig").util.default_config
-      local util = require("lspconfig/util")
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       -- Set global diagnostic settings
       vim.diagnostic.config({
         update_in_insert = true, -- Update diagnostics while in insert mode
       })
 
-      -- Add cmp_nvim_lsp capabilities settings to lspconfig
-      -- This should be executed before you configure any language server
-      lsp_defaults.capabilities =
-          vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
+      vim.lsp.config("*", {
+        capabilities = vim.tbl_deep_extend("force", vim.lsp.config["*"].capabilities or {}, capabilities),
+      })
 
-      lsp_config.gopls.setup({
+      vim.lsp.config("gopls", {
         cmd = { "gopls" },
         filetypes = { "go", "gomod", "gowork", "gotmpl" },
         settings = {
@@ -85,7 +87,6 @@ return {
               nilness = true,
               unusedparams = true,
               unusedwrite = true,
-
             },
             usePlaceholders = true,
             completeUnimported = true,
@@ -141,7 +142,7 @@ return {
           -- this first function is the "default handler"
           -- it applies to every language server without a "custom handler"
           function(server_name)
-            require("lspconfig")[server_name].setup({})
+            vim.lsp.enable(server_name)
           end,
         },
       })
