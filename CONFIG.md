@@ -205,6 +205,7 @@ Formatters by filetype:
 - Lua: `stylua`
 - Python: `isort`, then `black`
 - Go: `gofumpt`
+- C#: `csharpier`
 
 Formatting behavior:
 

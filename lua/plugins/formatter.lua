@@ -13,11 +13,12 @@ return {
 				json = { "prettier" },
 				markdown = { "prettier" },
 				html = { "prettier" },
-				css = { "prettier" },
-				lua = { "stylua" },
-				python = { "isort", "black" },
-				go = { "gofumpt" },
-			},
+			css = { "prettier" },
+			lua = { "stylua" },
+			python = { "isort", "black" },
+			go = { "gofumpt" },
+			cs = { "csharpier" },
+		},
 			format_on_save = {
 				lsp_fallback = true,
 				async = false,
@@ -36,4 +37,3 @@ return {
 		end, { desc = "Format file or range (in visual mode)" })
 	end,
 }
-
